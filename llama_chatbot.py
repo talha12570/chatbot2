@@ -8,8 +8,17 @@ from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_core.runnables import RunnableWithMessageHistory
 import streamlit as st
 load_dotenv()
-groq_api_key="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"
+groq_api_key = os.getenv("GROQ_API_KEY")
 
+# Debug: Check if API key is loaded
+if not groq_api_key:
+    st.error("❌ GROQ_API_KEY not found in environment variables. Please check your .env file.")
+    st.stop()
+elif len(groq_api_key) < 10:
+    st.error("❌ GROQ_API_KEY appears to be invalid (too short). Please check your .env file.")
+    st.stop()
+else:
+    st.success(f"✅ API Key loaded successfully (ends with: ...{groq_api_key[-8:]})")
    
 st.set_page_config(page_title="LLAMA Chatbot", page_icon="🤖")
 st.title("🤖 LLAMA Chatbot")
