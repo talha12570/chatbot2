@@ -31,22 +31,15 @@ elif len(mistral_api_key) < 10:
 st.set_page_config(page_title="Bondu Chatbot", page_icon="🤖", layout="wide")
 
 UI_TEXT = {
-    "title": "🤖 Bondu Chatbot",
+    "title": "🤖 Bondu 18+ Chatbot",
     "caption": "Apna desi AI dost",
     "placeholder": "Kuch bhi poochho...",
-    "sidebar_title": "Settings",
-    "lang_note": "Style: Roman Urdu + English mix",
 }
 
 st.title(UI_TEXT["title"])
 st.caption(UI_TEXT["caption"])
 
-# ────────────────────────────────────────────────
-# SIDEBAR
-# ────────────────────────────────────────────────
-st.sidebar.title(UI_TEXT["sidebar_title"])
-st.sidebar.markdown(UI_TEXT["lang_note"])
-st.sidebar.markdown("**Model:** `mistral-large-latest` (Large 3)")
+
 
 # ────────────────────────────────────────────────
 # MODEL — Mistral Large 3 (best accuracy, MoE 675B)
