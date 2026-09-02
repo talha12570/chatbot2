@@ -45,7 +45,7 @@ st.caption(UI_TEXT["caption"])
 # MODEL — Mistral Large 3 (best accuracy, MoE 675B)
 # ────────────────────────────────────────────────
 model = ChatMistralAI(
-    model="mistral-small-latest",   # Maps to Mistral Large 3 on the API
+    model="mistral-medium-latest",   # Maps to Mistral Large 3 on the API
     api_key=mistral_api_key,
     temperature=0.7,                # Balanced: accurate + natural
     top_p=0.9,
